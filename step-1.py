@@ -24,16 +24,20 @@ class Liquid:
     id: int  # номер жижи, реализовать автоинкремент
     title: str  # название
     density: float  # плотность
+    ID = 0
 
     def __init__(self, title, density):
-        pass
+        Liquid.ID += 1
+        self.id = Liquid.ID
+        self.title = title
+        self.density = density
 
     def __str__(self):
         """
         Реализовать вывод в следующем виде, для жидкости с id=1, названием Воды и плотностью 1000кг/м3:
         1. Жидкость "Вода" с плотностью 1000 кг/м3
         """
-        pass
+        return f'{self.id}. Жидкость "{self.title}" с плотностью {self.density} кг/м3'
 
 
 if __name__ == '__main__':
